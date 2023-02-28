@@ -10,16 +10,28 @@
     "Programming Languages"
   ],
   "contributes": {
-    "languages": [{
-      "id": "p23",
-      "aliases": ["PREV23", "p23"],
-      "extensions": [".p23"],
-      "configuration": "./language-configuration.json"
-    }],
-    "grammars": [{
-      "language": "p23",
-      "scopeName": "source.p23",
-      "path": "./syntaxes/p23.tmLanguage.json"
-    }]
+    "languages": [
+      {
+        "id": "p23",
+        "aliases": [
+          "PREV23",
+          "p23"
+        ],
+        "extensions": [
+          ".p23"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "p23",
+        "scopeName": "source.p23",
+        "path": "./syntaxes/p23.tmLanguage.json"
+      }
+    ]
+  },
+  "devDependencies": {
+    "js-yaml": "^4.1.0"
   }
 }
