@@ -1,0 +1,25 @@
+{
+  "name": "prev23-language-support",
+  "displayName": "PREV23 Language Support",
+  "description": "Language support for the PREV23 programming language @ FRI UNI-LJ",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "p23",
+      "aliases": ["PREV23", "p23"],
+      "extensions": [".p23"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "p23",
+      "scopeName": "source.p23",
+      "path": "./syntaxes/p23.tmLanguage.json"
+    }]
+  }
+}
