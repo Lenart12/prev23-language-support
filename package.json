@@ -8,6 +8,7 @@
   "engines": {
     "vscode": "^1.75.0"
   },
+  "icon": "P23.png",
   "categories": [
     "Programming Languages"
   ],
@@ -22,6 +23,10 @@
         "extensions": [
           ".p23"
         ],
+        "icon": {
+          "dark": "P23.png",
+          "light": "P23.png"
+        },
         "configuration": "./language-configuration.json"
       }
     ],
