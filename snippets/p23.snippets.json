@@ -1,0 +1,58 @@
+{
+    "Let in": {
+        "prefix": "let",
+        "body": [
+            "let ${1:declaration} in ${2:statement};"
+        ],
+        "description": "Creates a let in expression"
+    },
+    "If": {
+        "prefix": "if",
+        "body": [
+            "if ${1:expression} then ${2:statement};"
+        ],
+        "description": "Creates an if expression"
+    },
+    "If else": {
+        "prefix": "ifelse",
+        "body": [
+            "if ${1:expression} then ${2:statement} else ${3:statement};"
+        ],
+        "description": "Creates an if-else expression"
+    },
+    "While do": {
+        "prefix": "while",
+        "body": [
+            "while ${1:expression} do ${2:statement};"
+        ],
+        "description": "Creates a while do expression"
+    },
+    "Function": {
+        "prefix": "fun",
+        "body": [
+            "fun ${1:expression}(${2:arguments}) : ${3:return type} = ${4:body};"
+        ],
+        "description": "Creates a function definition"
+    },
+    "Type": {
+        "prefix": "typ",
+        "body": [
+            "typ ${1:name} = ${2:type};"
+        ],
+        "description": "Creates a type definition"
+    },
+    "Variable": {
+        "prefix": "var",
+        "body": [
+            "var ${1:name} : ${2:type};"
+        ],
+        "description": "Creates a varible definition"
+    },
+    "Main": {
+        "prefix": "main",
+        "body": [
+            "fun main(argc: int, argv: ^^char) : int = {\n   ${1:# code}\n};"
+        ],
+        "description": "Creates a varible definition"
+    }
+}

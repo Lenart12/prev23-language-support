@@ -1,19 +1,87 @@
 $schema: https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json
 name: PREV23
 patterns:
+  - include: '#comment'
+  - include: '#constants'
   - include: '#keywords'
-  - include: '#strings'
+  - include: '#function_call'
+  - include: '#identifier'
+  - include: '#punctuation'
 repository:
+  comment:
+    patterns:
+    - name: comment.line
+      match: \#.*
   keywords:
     patterns:
       - name: keyword.control.p23
-        match: \b(if|while|for|return)\b
+        match: \b(del|do|else|fun|if|in|let|new|then|typ|var|void|while)\b
+      - name: storage.type.primitive.p23
+        match: \b(bool|char|int)\b
+      - name: keyword.operator.comparison.p23
+        match: (==|!=|<|>|<=|>=)
+      - name: keyword.operator.bitwise.p23
+        match: (&|\||!)
+      - name: keyword.operator.assignment.p23
+        match: (=|\^)
+      - name: keyword.operator.arithmetic.p23
+        match: (\*|\/|%|\+|\-)
+  punctuation:
+    patterns:
+      - name: punctuation.seperator.colon.p23
+        match: (:)
+      - name: punctuation.seperator.comma.p23
+        match: (,)
+      - name: punctuation.terminator.p23
+        match: (;)
+  constants:
+    name: constant
+    patterns:
+      - include: '#comment'
+      - include: '#strings'
+      - include: '#char'
+      - include: '#number'
+      - include: '#langconstant'
   strings:
     name: string.quoted.double.p23
     begin: '"'
     end: '"'
     patterns:
       - name: constant.character.escape.p23
-        match: \\.
-scopeName: source.p23
+        match: \\"
+  char:
+    name: string.single.p23
+    begin: "'"
+    end: "'|\n"
+    patterns:
+      - name: constant.character.escape.p23
+        match: \\'
+  number:
+    patterns:
+      - name: constant.numberic.p23
+        match: \b(\d+)\b
+  langconstant:
+    patterns:
+      - name: constant.language.p23
+        match: \b(none|true|false|nil)\b
+  identifier:
+    patterns:
+      - name: variable.other.p23
+        match: \b([A-Za-z_][\w]*)\b      
+  function_parameters:
+    patterns:
+      - include: '#comment'
+      - include: '#keywords'
+      - include: '#identifier'
+      - include: '#constants'
+  function_call:
+    patterns:
+      - name: meta.entity.function-call.p23
+        begin: ([A-Za-z_][\w]*)\s*\(
+        beginCaptures:
+          '1': { name: entity.name.function.p23 }
+        patterns:
+          - include: '#function_parameters'
+        end: \)
 
+scopeName: source.p23
