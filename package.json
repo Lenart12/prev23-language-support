@@ -2,9 +2,11 @@
   "name": "prev23-language-support",
   "displayName": "PREV23 Language Support",
   "description": "Language support for the PREV23 programming language @ FRI UNI-LJ",
-  "repository": {"url": "https://github.com/Lenart12/prev23-language-support"},
+  "repository": {
+    "url": "https://github.com/Lenart12/prev23-language-support"
+  },
   "publisher": "Lenart12",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "engines": {
     "vscode": "^1.75.0"
   },
